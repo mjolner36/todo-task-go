@@ -4,9 +4,8 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 	"log"
-	"todo-task-go/da
 	"todo-task-go/database"
-	"log"
+	"todo-task-go/handlers"
 )
 
 func main() {

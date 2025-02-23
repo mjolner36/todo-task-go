@@ -39,3 +39,15 @@ API-эндпоинты:
 ![alt text](./screenshots/{4D7CBBA0-CB5E-4F43-B0CD-8204920B9583}.png)
 
 ![alt text](./screenshots/{293E63DA-CEA9-48F6-A0B9-88CDB6CC78FD}.png)
+
+В файле docker-compose.yml можно указать
+services:
+app:
+build: .
+ports:
+- "3000:3000"
+env_file:
+- .env
+depends_on:
+- db
+Так как файл уже явно объявлен в проекте
