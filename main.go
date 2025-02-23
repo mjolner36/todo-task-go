@@ -2,15 +2,23 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/joho/godotenv"
+	"log"
+	"todo-task-go/da
 	"todo-task-go/database"
-	"todo-task-go/handlers"
+	"log"
 )
 
 func main() {
 
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
 	app := fiber.New()
 
-	database.InitDatabase("postgres://postgres:12345@localhost:5432/postgres")
+	database.InitDatabase()
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Welcome to the Todo Task API!")
