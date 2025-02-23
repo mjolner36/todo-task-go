@@ -8,16 +8,13 @@ docker-compose up --build
 3)Приложение открывается по адресу: http://localhost:3000
 
 База данных PostgreSQL будет доступна на:
+```
 host: db
-
 port: 5432
-
 user: postgres
-
 password: 12345
-
 database: todo_db
-
+```
 Остановка проекта : docker-compose down
 
 API-эндпоинты:
@@ -41,13 +38,15 @@ API-эндпоинты:
 ![alt text](./screenshots/{293E63DA-CEA9-48F6-A0B9-88CDB6CC78FD}.png)
 
 В файле docker-compose.yml можно указать
+```
 services:
 app:
 build: .
 ports:
-- "3000:3000"
+-"3000:3000"
 env_file:
 - .env
 depends_on:
 - db
+```
 Так как файл уже явно объявлен в проекте
